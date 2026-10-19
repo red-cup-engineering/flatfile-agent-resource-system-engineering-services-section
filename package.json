@@ -9,5 +9,9 @@
   },
   "dependencies": {
     "@red-cup-engineering/flatfile-resource-graph-service": "workspace:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/red-cup-engineering/flatfile-agent-resource-system-engineering-services-section.git"
   }
 }
