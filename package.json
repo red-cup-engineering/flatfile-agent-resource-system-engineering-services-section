@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "type": "module",
   "description": "Groups FARS engineering and its shared conformance carriers; executable capabilities live in their JavaScript owners.",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "exports": {
     "./check-identity-vectors": "./scripts/check-identity-vectors.mjs"
   },
@@ -13,5 +13,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/red-cup-engineering/flatfile-agent-resource-system-engineering-services-section.git"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/561-group/.github/blob/main/TIPS.md"
   }
 }
