@@ -9,7 +9,7 @@ import { dirname, resolve } from "node:path";
 import {
   identity,
   identityOfRecord,
-} from "../../../../../../../../computer-data-engineering-services-section/services/computer-content-engineering-services-section/services/flatfile-resource-graph-service/src/kernel/identity.mjs";
+} from "@red-cup-engineering/flatfile-resource-graph-service/kernel/identity";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const section = resolve(here, "..");
