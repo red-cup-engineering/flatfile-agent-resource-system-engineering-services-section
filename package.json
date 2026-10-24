@@ -17,5 +17,13 @@
   "funding": {
     "type": "individual",
     "url": "https://github.com/561-group/.github/blob/main/TIPS.md"
+  },
+  "bin": {
+    "fars-identity-vectors": "./scripts/check-identity-vectors.mjs"
+  },
+  "scripts": {
+    "check": "node --check scripts/check-identity-vectors.mjs",
+    "test": "node scripts/check-identity-vectors.mjs",
+    "verify": "npm run check && npm test"
   }
 }
