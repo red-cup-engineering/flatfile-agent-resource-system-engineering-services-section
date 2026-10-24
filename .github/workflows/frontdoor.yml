@@ -22,3 +22,30 @@ jobs:
         with:
           node-version: '24'
       - run: npm run check
+
+  vectors-against-owner:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Checkout the conformance section
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Pin the original identity implementation
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: red-cup-engineering/flatfile-resource-graph-service
+          ref: 901360a395b9c726a85715be7d012f37f9ebbe69
+          path: .source-owner/flatfile-resource-graph-service
+          persist-credentials: false
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444
+        with:
+          node-version: '24'
+      - name: Install the pinned workspace source
+        run: |
+          npm install --global pnpm@11.28.5 --no-audit --no-fund
+          printf 'packages:\n  - "."\n  - ".source-owner/*"\n' > pnpm-workspace.yaml
+          printf 'registry=https://registry.561.group/\n' > .npmrc
+          pnpm install --ignore-scripts --no-frozen-lockfile
+      - name: Recompute original flatfile identity vectors
+        run: pnpm run verify
