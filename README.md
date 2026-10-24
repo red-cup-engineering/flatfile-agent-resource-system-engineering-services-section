@@ -62,11 +62,7 @@ no standalone installation is claimed.
 
 ## Status and boundaries
 
-The package manifest declares version `0.2.0`. The checked-in fixtures,
-source and declared script interface are inspectable now. Successful
-conformance requires an executed comparison against a specified version of
-the source owner's identity kernel; source files alone are not a passing
-result or proof of compatibility with every independent implementation.
+The package manifest declares version `0.2.0`. In the [hosted source-owner vector check](https://github.com/red-cup-engineering/flatfile-agent-resource-system-engineering-services-section/actions/runs/40125379275), this review branch recomputed **29 recorded vectors with zero mismatches** against `flatfile-resource-graph-service@901360a395b9c726a85715be7d012f37f9ebbe69` through the workspace dependency. This verifies the pinned pair at that run, not compatibility with every independent implementation or deployment.
 
 The `lib/legacy` and retained logs are historical/context material rather
 than additional executable identity providers. Further agent platform
